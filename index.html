@@ -3,12 +3,21 @@ layout: default
 title: sugar
 ---
 　　<h2>{{ page.title }}</h2>
-　　<p>最新文章</p>
-　　
 <ul>
-    　　　　{% for post in site.posts %}
-    　　　　　　
-    <li>{{ post.date | date_to_string }} <a href="{{ post.url }}">{{ post.title }}</a></li>
-    　　　　{% endfor %}
-    　　
+    {% for post in site.posts %}
+    <article>
+        <h2 class="title">
+            <a href="{{ post.url }}">{{ post.title }}</a>
+            <span>{{ post.date | date_to_string }}</span>
+        </h2>
+        <ul class="text">
+
+        </ul>
+        <div class="textfoot">
+            <a href="/articles/1459777150000.html">阅读全文</a>
+            <!--<a href="/">评论</a>-->
+            <a href="/">转载</a>
+        </div>
+    </article>
+    {% endfor %}
 </ul>
