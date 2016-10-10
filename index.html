@@ -23,9 +23,15 @@ title: sugar
     {% if paginator.previous_page %}
     <a href="/page{{ paginator.previous_page }}">&lt;&lt;上一页</a>
     {% endif %}
-    <span>{{ paginator.page }}</span>
-    <!--<a href="javascript:void(0);">2</a>-->
-    <!--<a href="javascript:void(0);">3</a>-->
+    {% for i in (1..paginator.total_pages) %}
+        {% if paginator.page == i %}
+            <span>{{ paginator.page }}</span>
+        {% elsif page == 1 %}
+            <a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+        {% else %}
+            <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ i }}</a>
+        {% endif%}
+    {% endfor %}
     {% if paginator.next_page %}
     <a href="/page{{ paginator.next_page }}" class="next">下一页&gt;&gt;</a>
     {% endif %}
