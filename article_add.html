@@ -3,23 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>添加新文章</title>
-    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
     <script src="./jslib/jquery-3.1.0.min.js"></script>
-    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <script src="js/shell.js"></script>
 </head>
 <body>
-<div id="wrap">
-    <div id="byTop"></div>
-    <div id="page-wrapper" class="gray-bg dashbard-1">
-        <div id="byMenu"></div>
-        <div id="byContent" id="byContent"></div>
-    </div>
-    <div class="loading" style="display: none">
-        <img src="assets/img/loading.gif" class="skip"/>
-    </div>
-    <!--<div class="shadow" style="display: none"></div>-->
-</div>
+<!-- 加载编辑器的容器 -->
+<script id="container" name="content" type="text/plain" style="width: 1000px;margin-left: auto;margin-right: auto;">
+        开始写博客，写完后点击第一排第一个按钮，复制出源代码后保存到本地记事本中
+    </script>
+<!-- 配置文件 -->
+<script type="text/javascript" src="/jslib/editor/ueditor.config.js"></script>
+<!-- 编辑器源码文件 -->
+<script type="text/javascript" src="/jslib/editor/ueditor.all.js"></script>
+<!-- 实例化编辑器 -->
+<script type="text/javascript">
+    var ue = UE.getEditor('container');
+</script>
 </body>
 </html>
