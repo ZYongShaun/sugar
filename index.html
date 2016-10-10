@@ -29,7 +29,7 @@ title: sugar
         {% elsif page == 1 %}
             <a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">{{ i }}</a>
         {% else %}
-            <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ i }}</a>
+            <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', i }}">{{ i }}</a>
         {% endif %}
     {% endfor %}
     {% if paginator.next_page %}
