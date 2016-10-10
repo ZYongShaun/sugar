@@ -27,7 +27,7 @@ title: sugar
         {% if paginator.page == i %}
             <span>{{ paginator.page }}</span>
         {% elsif page == 1 %}
-            <a href="/index.html">{{ i }}</a>
+            <a href="/index.html">12345</a>
         {% else %}
             <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', i }}">{{ i }}</a>
         {% endif %}
