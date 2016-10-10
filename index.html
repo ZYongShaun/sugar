@@ -20,8 +20,10 @@ title: sugar
 {% endfor %}
 
 <div class="pages">
-    {% if paginator.previous_page %}
-    <a href="/page{{ paginator.previous_page }}">&lt;&lt;上一页</a>
+    {% if paginator.previous_page != 1 %}
+        <a href="/page{{ paginator.previous_page }}">&lt;&lt;上一页</a>
+    {% else %}
+        <a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">&lt;&lt;上一页</a>
     {% endif %}
     {% for i in (1..paginator.total_pages) %}
         {% if paginator.page == i %}
@@ -33,7 +35,7 @@ title: sugar
         {% endif %}
     {% endfor %}
     {% if paginator.next_page %}
-    <a href="/page{{ paginator.next_page }}" class="next">下一页&gt;&gt;</a>
+        <a href="/page{{ paginator.next_page }}" class="next">下一页&gt;&gt;</a>
     {% endif %}
 </div>
 <!--{% for post in site.posts %}-->
