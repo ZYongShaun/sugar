@@ -1,6 +1,6 @@
 excerpt_separator: "<separator/>"
 timezone: Asia/Shang_Hai
-paginate: 1
+paginate: 5
 site.baseurl: /sugar
 paginate_path: "page:num"
 
