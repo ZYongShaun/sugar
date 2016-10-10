@@ -3,7 +3,6 @@ layout: default
 title: sugar
 ---
 
-<p>{{ paginator }}</p>
 {% for post in paginator.posts %}
 <article>
     <h2 class="title">
@@ -19,17 +18,17 @@ title: sugar
 </article>
 {% endfor %}
 
-<!--<div class="pages">-->
-    <!--{% if paginator.previous_page %}-->
-    <!--<a href="/page{{ paginator.previous_page }}">&lt;&lt;上一页</a>-->
-    <!--{% endif %}-->
-    <!--<span>Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>-->
-    <!--&lt;!&ndash;<a href="javascript:void(0);">2</a>&ndash;&gt;-->
-    <!--&lt;!&ndash;<a href="javascript:void(0);">3</a>&ndash;&gt;-->
-    <!--{% if paginator.next_page %}-->
-    <!--<a href="/page{{ paginator.next_page }}" class="next">下一页&gt;&gt;</a>-->
-    <!--{% endif %}-->
-<!--</div>-->
+<div class="pages">
+    {% if paginator.previous_page %}
+    <a href="/page{{ paginator.previous_page }}">&lt;&lt;上一页</a>
+    {% endif %}
+    <span>Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+    <!--<a href="javascript:void(0);">2</a>-->
+    <!--<a href="javascript:void(0);">3</a>-->
+    {% if paginator.next_page %}
+    <a href="/page{{ paginator.next_page }}" class="next">下一页&gt;&gt;</a>
+    {% endif %}
+</div>
 <!--{% for post in site.posts %}-->
 <!--<article>-->
 <!--<h2 class="title">-->
