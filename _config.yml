@@ -1,3 +1,7 @@
+author: 张大发
+description: sugar's blog, 记录生活点点滴滴
+domain: sugar.050701.live
+
 excerpt_separator: "<separator/>"
 timezone: Asia/Shang_Hai
 paginate: 5
