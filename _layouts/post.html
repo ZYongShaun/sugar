@@ -4,7 +4,7 @@ layout: default
 <article>
     <h2 class="title">
         <a href="javascript:void(0)">{{ page.title }}</a>
-        <span>{{ page.date | date_to_string }}</span>
+        <span>{{ page.date | date: '%Y-%m-%d %H:%M:%S' }}</span>
     </h2>
     <ul class="text">
         {{ content }}
