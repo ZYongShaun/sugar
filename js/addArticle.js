@@ -8,9 +8,12 @@ addArticle.init = function () {
     addArticle.uploadImage();
 
     $('#message').off().on("click", function () {
-        $('.gitInfo').show().off().on("click", function () {
-            $('.gitInfo').hide();
-        });
+        var $gitInfo = $('.gitInfo');
+        if($gitInfo.is(':hidden')){
+            $gitInfo.show();
+        } else {
+            $gitInfo.hide();
+        }
     });
 };
 
