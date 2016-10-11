@@ -1,22 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cn">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
     <meta charset="UTF-8">
     <title>添加新文章</title>
     <script src="./jslib/jquery-3.1.0.min.js"></script>
 </head>
 <body>
-<!-- 加载编辑器的容器 -->
-<script id="container" name="content" type="text/plain" style="width: 1000px;margin-left: auto;margin-right: auto;">
-        开始写博客，写完后点击第一排第一个按钮，复制出源代码后保存到本地记事本中
-    </script>
-<!-- 配置文件 -->
-<script type="text/javascript" src="/jslib/editor/ueditor.config.js"></script>
-<!-- 编辑器源码文件 -->
-<script type="text/javascript" src="/jslib/editor/ueditor.all.js"></script>
+<!--&lt;!&ndash; 加载编辑器的容器 &ndash;&gt;-->
+<!--<script id="container" name="content" type="text/plain" style="width: 1000px;margin-left: auto;margin-right: auto;">-->
+<!--</script>-->
+<!--&lt;!&ndash; 配置文件 &ndash;&gt;-->
+<!--<script type="text/javascript" src="/jslib/editor/ueditor.config.js"></script>-->
+<!--&lt;!&ndash; 编辑器源码文件 &ndash;&gt;-->
+<!--<script type="text/javascript" src="/jslib/editor/ueditor.all.js"></script>-->
 <!-- 实例化编辑器 -->
 <script type="text/javascript">
-    var ue = UE.getEditor('container');
+    $(function () {
+        function formatTime() {
+            var now = new Date();
+            var year = now.getFullYear(), month = now.getMonth() + 1, day = now.getDate(), hour = now.getHours(), minute = now.getMinutes(), second = now.getSeconds();
+
+            return year + "-" + month + '-' + day + " " + hour + ":" + minute + ":" + second;
+        }
+
+        var defaultHtml = '<p>---</p><p>layout: post</p><p>title: 这里是文章标题</p>';
+        defaultHtml += '<p>date: ' + formatTime() + '</p><p>tags: 生活</p><p>---</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以上内容放在新家文章的开头</p>';
+        $('#defaultContent').html(defaultHtml);
+    });
+//    var ue = UE.getEditor('container', {
+//        initialContent: defaultHtml
+//    });
 </script>
+<div id="defaultContent"></div>
 </body>
 </html>
