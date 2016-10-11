@@ -6,6 +6,12 @@ var addArticle = {};
 addArticle.init = function () {
     addArticle.render();
     addArticle.uploadImage();
+
+    $('#message').off().on("click", function () {
+        $('.gitInfo').show().off().on("click", function () {
+            $('.gitInfo').hide();
+        });
+    });
 };
 
 addArticle.render = function () {

@@ -152,7 +152,7 @@ body {
 .tuku-dnd-area {
     margin-top: 0;
     padding: 1px;
-    width: 80%;
+    width: 65%;
     display: inline-block;
 }
 
@@ -189,7 +189,7 @@ body {
 }
 
 .defaultContent {
-    width: 15%;
+    width: 30%;
     display: inline-block;
     float: left;
     min-height: 300px;
@@ -203,4 +203,8 @@ body {
 .fileList img{
     max-width: 430px;
     margin-bottom: 5px;
+}
+
+.gitInfo{
+    display: none;
 }
