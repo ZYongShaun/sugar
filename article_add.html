@@ -7,25 +7,33 @@
     <script src="./jslib/jquery-3.1.0.min.js"></script>
 </head>
 <body>
-<!--&lt;!&ndash; 加载编辑器的容器 &ndash;&gt;-->
-<!--<script id="container" name="content" type="text/plain" style="width: 1000px;margin-left: auto;margin-right: auto;">-->
-<!--</script>-->
-<!--&lt;!&ndash; 配置文件 &ndash;&gt;-->
+<!-- 加载编辑器的容器 -->
+<!--<script id="container" name="content" type="text/plain" style="width: 1000px;margin-left: auto;margin-right: auto;"></script>-->
+<!-- 配置文件 -->
 <!--<script type="text/javascript" src="/jslib/editor/ueditor.config.js"></script>-->
-<!--&lt;!&ndash; 编辑器源码文件 &ndash;&gt;-->
+<!-- 编辑器源码文件 -->
 <!--<script type="text/javascript" src="/jslib/editor/ueditor.all.js"></script>-->
 <!-- 实例化编辑器 -->
 <script type="text/javascript">
     $(function () {
         function formatTime() {
             var now = new Date();
-            var year = now.getFullYear(), month = now.getMonth() + 1, day = now.getDate(), hour = now.getHours(), minute = now.getMinutes(), second = now.getSeconds();
+            var year = formatString(now.getFullYear()), month = formatString(now.getMonth() + 1),
+                    day = formatString(now.getDate()), hour = formatString(now.getHours()),
+                    minute = formatString(now.getMinutes()), second = formatString(now.getSeconds());
 
             return year + "-" + month + '-' + day + " " + hour + ":" + minute + ":" + second;
         }
 
-        var defaultHtml = '<p>---</p><p>layout: post</p><p>title: 这里是文章标题</p>';
-        defaultHtml += '<p>date: ' + formatTime() + '</p><p>tags: 生活</p><p>---</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以上内容放在新家文章的开头</p>';
+        function formatString(i) {
+            if(i >= 0 && i < 10){
+                return '0' + i;
+            }
+            return i.toString();
+        }
+
+        var defaultHtml = '<p>---<br/>layout: post<br/>title: 这里是文章标题<br/>';
+        defaultHtml += 'date: ' + formatTime() + '<br/>tags: 生活<br/>---</p><p>以上内容放在新建文章的开头</p>';
         $('#defaultContent').html(defaultHtml);
     });
 //    var ue = UE.getEditor('container', {
