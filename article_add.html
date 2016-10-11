@@ -1,45 +1,56 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
     <meta charset="UTF-8">
     <title>添加新文章</title>
+    <link href="/css/addArticle.css" rel="stylesheet">
     <script src="./jslib/jquery-3.1.0.min.js"></script>
+    <!--<script type="text/javascript" src="/jslib/editor/ueditor.config.js"></script>-->
+    <!--<script type="text/javascript" src="/jslib/editor/ueditor.all.js"></script>-->
+    <script type="text/javascript" src="/jslib/uploadImg/dist/qiniu.js"></script>
+    <script type="text/javascript" src="http://cdn.staticfile.org/Plupload/2.1.1/moxie.min.js"></script>
+    <script type="text/javascript" src="http://cdn.staticfile.org/Plupload/2.1.1/plupload.min.js"></script>
+    <script type="text/javascript" src="/js/addArticle.js"></script>
 </head>
 <body>
-<!-- 加载编辑器的容器 -->
-<!--<script id="container" name="content" type="text/plain" style="width: 1000px;margin-left: auto;margin-right: auto;"></script>-->
-<!-- 配置文件 -->
-<!--<script type="text/javascript" src="/jslib/editor/ueditor.config.js"></script>-->
-<!-- 编辑器源码文件 -->
-<!--<script type="text/javascript" src="/jslib/editor/ueditor.all.js"></script>-->
-<!-- 实例化编辑器 -->
-<script type="text/javascript">
-    $(function () {
-        function formatTime() {
-            var now = new Date();
-            var year = formatString(now.getFullYear()), month = formatString(now.getMonth() + 1),
-                    day = formatString(now.getDate()), hour = formatString(now.getHours()),
-                    minute = formatString(now.getMinutes()), second = formatString(now.getSeconds());
+<div>
+    <div id="defaultContent" class="defaultContent">
+        <div style="float: left">
+            <p>
+                ---<br/>
+                layout: post<br/>
+                title: 这里是文章标题<br/>
+                date: <span id="date"></span><br/>
+                tags: 生活<br/>
+                ---
+            </p>
+            <p>以上内容放在新建文章的开头</p>
+            <a href="http://markdown.xiaoshujiang.com/" target="_blank">开始写博客</a>
+        </div>
+        <div style="width: 1px;display: inline-block;height: 100%;background-color: #383232;margin: 0 15px;min-height: 300px;"></div>
+    </div>
+    <div class="tuku-dnd-area" id="tuku-dnd-area">
+        <div class="pics text-center" id="container">
+            <h2 id="help_message">粘贴、拖动或点此选择图片上传</h2>
+        </div>
+        <div id="fileList" class="fileList">
+        </div>
+    </div>
+</div>
+<!--<div class="row" style="margin-top: 20px;">-->
+<!--<div class="col-md-12">-->
+<!--<div id="container">-->
+<!--<a class="btn btn-default btn-lg " id="pickfiles" href="#">-->
+<!--<i class="glyphicon glyphicon-plus"></i>-->
+<!--<span>选择文件</span>-->
+<!--</a>-->
+<!--</div>-->
+<!--<div id="fileList">-->
 
-            return year + "-" + month + '-' + day + " " + hour + ":" + minute + ":" + second;
-        }
-
-        function formatString(i) {
-            if(i >= 0 && i < 10){
-                return '0' + i;
-            }
-            return i.toString();
-        }
-
-        var defaultHtml = '<p>---<br/>layout: post<br/>title: 这里是文章标题<br/>';
-        defaultHtml += 'date: ' + formatTime() + '<br/>tags: 生活<br/>---</p><p>以上内容放在新建文章的开头</p>';
-        $('#defaultContent').html(defaultHtml);
-    });
-//    var ue = UE.getEditor('container', {
-//        initialContent: defaultHtml
-//    });
-</script>
-<div id="defaultContent"></div>
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
 </body>
 </html>
