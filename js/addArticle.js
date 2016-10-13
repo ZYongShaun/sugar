@@ -28,7 +28,7 @@ addArticle.uploadImage = function () {
         // 在初始化时，uptoken，uptoken_url，uptoken_func三个参数中必须有一个被设置
         // 切如果提供了多个，其优先级为uptoken > uptoken_url > uptoken_func
         // 其中uptoken是直接提供上传凭证，uptoken_url是提供了获取上传凭证的地址，如果需要定制获取uptoken的过程则可以设置uptoken_func
-        uptoken: '3HcA_wHkRblRUM32nCC0gWZ22PF3_fAXjCgUdpNT:s8sTOcFRZXgeeuOoiyPcZ-VWjU8=:eyJzY29wZSI6ImV2ZXJub3RlIiwiZGVhZGxpbmUiOjE0NzYxODc3ODd9', // uptoken是上传凭证，由其他程序生成
+        uptoken: '3HcA_wHkRblRUM32nCC0gWZ22PF3_fAXjCgUdpNT:hkCTHmZuAbipTHA-rKOH1EOgBUU=:eyJzY29wZSI6ImV2ZXJub3RlIiwiZGVhZGxpbmUiOjE0OTQwODY0MDB9', // uptoken是上传凭证，由其他程序生成
         // uptoken_url: '/uptoken',         // Ajax请求uptoken的Url，强烈建议设置（服务端提供）
         // uptoken_func: function(file){    // 在需要获取uptoken时，该方法会被调用
         //    // do something
