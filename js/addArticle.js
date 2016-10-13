@@ -90,6 +90,7 @@ addArticle.uploadImage = function () {
             },
             'Error': function (up, err, errTip) {
                 addArticle.token = Token().getToken();
+                alert('上传失败，请重试');
             },
             'UploadComplete': function () {
                 //队列文件处理完毕后，处理相关的事情
