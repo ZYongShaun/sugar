@@ -3,7 +3,7 @@ description: sugar's blog, 记录生活点点滴滴
 domain: sugar.050701.live
 
 excerpt_separator: "<separator/>"
-timezone: Asia/Shang_Hai
+timezone: Asia/Shanghai
 paginate: 5
 site.baseurl: /sugar
 paginate_path: "page:num"
