@@ -64,10 +64,16 @@
         <section class="taglist">
             <h2>全部标签</h2>
             <ul>
-                <li><a href="/">青空</a></li>
-                <li><a href="/">情感聊吧</a></li>
-                <li><a href="/">study</a></li>
-                <li><a href="/">青青唠叨</a></li>
+                {% for category in site.categories %}
+                    <li><a href="/">{{ category | first }}</a></li>
+                {% endfor %}
+                <!--<h2>{{ category | first }}</h2>-->
+                <!--</span>{{ category | last | size }}</span>-->
+                <!--<ul class="arc-list">-->
+                    <!--{% for post in category.last %}-->
+                    <!--<li>{{ post.date | date:"%d/%m/%Y"}}<a href="{{ post.url }}">{{ post.title }}</a></li>-->
+                    <!--{% endfor %}-->
+                <!--</ul>-->
             </ul>
         </section>
     </aside>
