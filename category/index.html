@@ -1,0 +1,19 @@
+---
+layout: default
+title: sugar
+---
+<div>
+{% for category in site.categories %}
+<ul categoryName="{{ category[0] }}">
+    <span>{{ category[0] }}</span>
+    {% for post in category[1] %}
+       <li>
+           <a href="{{ post.url }}">
+               <span>{{ post.title }}</span>
+               <span>{{ post.date | date: '%Y-%m-%d %H:%M:%S' }}</span>
+           </a>
+       </li>
+    {% endfor %}
+</ul>
+{% endfor %}
+</div>
