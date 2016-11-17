@@ -8,4 +8,9 @@ paginate: 5
 site.baseurl: /sugar
 paginate_path: "page:num"
 
+markdown: kramdown
+kramdown:
+  input:  GFM
+  use_coderay: true
+
 gems: [jekyll-paginate]
